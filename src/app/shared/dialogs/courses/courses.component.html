@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Courses</h2>
+<mat-dialog-content class="mat-typography">
+    <ul>
+        <li>Masters of Computer Applications (MCA)
+         <p>Duration: 2 years &nbsp;  Strength: 30</p>
+        </li>
+        <li>Masters of Technology in Computer Science (M.Tech)
+            <p>Duration: 2 years &nbsp;  Strength: 10</p>
+        </li>
+        <li>Masters of Science in Computer Science (M.Sc)
+            <p>Duration: 2 years &nbsp;  Strength: 20</p>
+        </li>
+        <li>Doctor of Philosophy Ph.D</li>
+    </ul>
+  
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Add Course
+      <mat-icon>add</mat-icon>
+  </button>
+</mat-dialog-actions>
+

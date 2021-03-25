@@ -1,0 +1,16 @@
+.spacer{
+    flex: 1 1 auto;
+}
+.toolbar{
+    background-color: rgba(44, 44, 44, 0.801);
+    color: wheat;
+}
+
+.header-logo{
+    margin-right: 0.5rem;
+    filter: invert(1);
+}
+
+.a:link{
+   color: beige;
+}

@@ -1,0 +1,42 @@
+.example-card {
+    margin-top: 2rem;
+    margin-left: 21rem;
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+.info-text{
+  margin-top: 2rem;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+}
+
+mat-card-content{
+  display: block;
+  margin-left: 4rem;
+}
+
+mat-action-row, button{
+  margin-top: 2rem;
+  float: right;
+}
+
+.favourite-button{
+  margin-top: 2rem;
+  float: left;
+}
+
+
+mat-spinner{
+  margin: auto;
+}
+
+.image{
+  width: 100%;
+}
+
+.image img{
+  width: 80%;
+}

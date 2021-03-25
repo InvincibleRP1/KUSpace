@@ -1,0 +1,53 @@
+<app-header></app-header>
+    <mat-card class="signup-card">
+        <mat-card-content>
+            <form (ngSubmit)="onSubmit()" [formGroup]="AuthForm">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Full Name</mat-label>
+                    <input formControlName="FullName" matInput required />
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="legacy">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput required />
+
+                    <mat-error *ngIf="AuthForm.get('email').errors">Required Email address</mat-error>
+                </mat-form-field>
+
+                <label id="example-radio-group-label">Choose Your Role:</label>
+                <mat-radio-group formControlName="role">
+                    <mat-radio-button value="Student">Student</mat-radio-button>
+                    <mat-radio-button value="Teacher">Teacher</mat-radio-button>
+                </mat-radio-group>
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" formControlName="password" matInput required />
+
+                    <mat-error *ngIf="AuthForm.get('password').errors">Valid Password required</mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password Confirmation</mat-label>
+                    <input type="password" formControlName="passwordConfirmation" matInput required />
+                </mat-form-field>
+
+                <mat-error
+                    *ngIf="AuthForm.get('passwordConfirmation').touched && AuthForm.hasError('passwordsDontMatch')">
+                    Passwords don't match
+                </mat-error>
+
+                <mat-error *ngIf="AuthForm.get('passwordConfirmation').touched && AuthForm.get('role').errors">
+                    All fields must be filled!
+                </mat-error>
+
+                <mat-error *ngIf="AuthForm.hasError('noConnection')">
+                    No connection
+                </mat-error>
+
+                <button [disabled]="AuthForm.invalid" mat-flat-button color="primary">Sign Up</button>
+
+            </form>
+        </mat-card-content>
+    </mat-card>

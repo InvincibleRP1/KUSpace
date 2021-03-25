@@ -1,0 +1,70 @@
+.background{
+    background-color: rgb(1, 61, 85);
+}
+#logout{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+.leftfixed{
+    position: fixed;
+    display: inline-block;
+    margin-top: 5rem;
+    margin-left: 25px;
+    padding: 0.5rem;
+    height: 33.5rem;
+    width: 15vw;
+    background: rgba(150, 150, 150, 0.8);
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.sidebarleft{
+    margin-top: 1rem;
+    color: rgb(8, 8, 8);
+    text-align: center;
+}
+.sidebarleft>p{
+    margin: 22px;
+}
+
+.sidebarleft p[id="sidename"]{
+font-family: 'Roboto Mono', monospace;
+font-size: xx-large;
+}
+
+.sidebarleft p[id="ssn"]{
+    margin-top: 35px !important;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16px;
+}
+.sidebarleft p[id="dept"]{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16px;
+}
+.sidebarleft p[id="side"]{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: xx-large;
+}
+.sidebarleft p[id="course"]{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.sidebarleft>a{
+    text-align: center;
+    color: black;
+    margin: 1rem;
+    font-family: 'Roboto Mono', monospace;
+}
+.sidebarleft>a:link{
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+.sidebarleft hr{
+    border: 0.5px solid #B7B7B7;
+	outline: 0px;
+	width: 90%;
+	box-shadow: 1px 1px 5px #999999;
+    margin-top: 25px;
+	margin-bottom: 35px;
+}

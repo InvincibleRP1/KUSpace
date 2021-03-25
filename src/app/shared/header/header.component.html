@@ -1,0 +1,18 @@
+<div class="background-image"></div>
+<div class="content">
+    <mat-toolbar class="toolbar">
+        <mat-toolbar-row>
+            <img class="header-logo"
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/4/40/University_of_Kalyani_Logo.svg/1200px-University_of_Kalyani_Logo.svg.png"
+                alt="KULogo" width="50px">
+                <span class="header-tagline">KUSpace</span>
+            <span class="spacer"></span>
+            <a mat-button routerLink="/">Home</a>
+            <a *ngIf="!userIsAuthenticated"mat-button routerLink="/signup">Sign Up</a>
+            <a *ngIf="!userIsAuthenticated"mat-button routerLink="/login">Log In</a>
+            <a *ngIf="userIsAuthenticated" mat-button routerLink="/user">Timeline</a>
+            <!-- <a mat-button routerLink="/admin">Admin Section</a> -->
+            <button *ngIf="userIsAuthenticated" mat-button (click)= onLogOut()>Log Out</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+

@@ -1,0 +1,38 @@
+<mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+        <span>KUSpace Admin</span>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/">Home</a>
+        <button mat-button (click)="openDialog()">Courses</button>
+        <button mat-button>Faculties</button>
+        <a mat-button routerLink="/">Class Schedule</a>
+        <a mat-button routerLink="/">Results</a>
+        <a mat-button routerLink="/">Student Database</a>
+        <a mat-button routerLink="/">Log Out</a>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-drawer-container class="container">
+    <mat-drawer class="nav" mode="side" opened>
+        <br>
+        Welcome
+        <div class="sidebarleft">
+            <img src="https://image.flaticon.com/icons/png/512/17/17004.png" width="150px" />
+            <p id="sidename"> User Name</p>
+            <p id="ssn"> University Of Kalyani</p>
+            <p id="dept"> Computer Science & Engineering Department</p>
+            <p id="course">Teacher</p>
+            <hr>
+            <!-- <a routerLink="/" id="viewall">Profile</a> -->
+            <!-- <p id="nosociety">31</p> -->
+            <!-- <a id="society">Society</a>
+            <p><button mat-button id="logout" (click)="onLogOut()">Log Out</button></p> -->
+        </div>
+
+    </mat-drawer>
+    <mat-drawer-content>
+        
+    </mat-drawer-content>
+</mat-drawer-container>

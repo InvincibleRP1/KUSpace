@@ -1,0 +1,39 @@
+
+<mat-card class="PostAdd">
+    <mat-card-content>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <div>
+            <img src="https://image.flaticon.com/icons/png/512/17/17004.png" mat-card-avatar>
+        </div>
+        <form [formGroup]="PostForm" (submit)="onAddPost()" *ngIf="!isLoading">
+            <mat-form-field class="title-post">
+                <input matInput formControlName="title" placeholder="Enter the title">
+            </mat-form-field>
+            <mat-error *ngIf="PostForm.get('title').touched && PostForm.get('title').invalid"> Please enter a title
+            </mat-error>
+
+            <mat-form-field>
+                <textarea matInput rows="5" formControlName="content" placeholder="Type your post here"></textarea>
+            </mat-form-field>
+            <mat-error *ngIf="PostForm.get('content').touched && PostForm.get('content').invalid"> Post content can't be
+                empty! </mat-error>
+            <button mat-raised-button color="accent" type="submit">
+                {{ mode == 'user' ? 'Add Post' : 'Save Post' }}
+            </button>
+            <button mat-stroked-button type="button" (click)="filePicker.click()">
+                <mat-icon>
+                    insert_photo
+                </mat-icon>Photo
+            </button>
+            <input type="file" #filePicker (change)="onImagePicked($event)">
+            <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && PostForm.get('image').valid">
+                <img [src]="imagePreview" [alt]="PostForm.value.title">
+            </div>
+
+            <!-- <button mat-button *ngIf="data" mat-dialog-close>
+                Save
+            </button>
+             -->
+        </form>
+    </mat-card-content>
+</mat-card>
