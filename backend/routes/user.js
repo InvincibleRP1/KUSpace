@@ -1,5 +1,5 @@
 const router = require('express').Router()
-// const router= express.Router();
+// constrouter= express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 
@@ -42,6 +42,7 @@ router.post('/login', (req, res, next) => {
             }
             fetchedUser = user;
             return bcrypt.compare(req.body.password, user.password);
+            
         })
         .then(result => {
             if (!result) {
@@ -52,7 +53,8 @@ router.post('/login', (req, res, next) => {
             const token = jwt.sign({ email: fetchedUser.email, userId: fetchedUser._id }, 'asderfghtyu', { expiresIn: '1h' })
             res.status(200).json({
                 token: token,
-                expiresIn: 3600
+                expiresIn: 3600,
+                userId: fetchedUser._id
             })
 
 
@@ -68,10 +70,11 @@ router.get('', (req, res, next) => {
     User.find().then(documents => {
         res.status(200).json({
             message: 'Users fetched successfully',
-            posts: documents
+            users: documents
         });
     })
 
 })
+
 
 module.exports = router;

@@ -1,4 +1,4 @@
-.background{
+body.user{
     background-color: rgb(1, 61, 85);
 }
 #logout{
@@ -8,10 +8,10 @@
 .leftfixed{
     position: fixed;
     display: inline-block;
-    margin-top: 5rem;
+    margin-top: 1rem;
     margin-left: 25px;
     padding: 0.5rem;
-    height: 33.5rem;
+    height: 38.8rem;
     width: 15vw;
     background: rgba(150, 150, 150, 0.8);
     border-radius: 15px;
@@ -19,7 +19,7 @@
 }
 
 .sidebarleft{
-    margin-top: 1rem;
+    margin-top: -1rem;
     color: rgb(8, 8, 8);
     text-align: center;
 }
@@ -29,7 +29,7 @@
 
 .sidebarleft p[id="sidename"]{
 font-family: 'Roboto Mono', monospace;
-font-size: xx-large;
+font-size: x-large;
 }
 
 .sidebarleft p[id="ssn"]{
@@ -67,4 +67,38 @@ font-size: xx-large;
 	box-shadow: 1px 1px 5px #999999;
     margin-top: 25px;
 	margin-bottom: 35px;
+}
+
+.right-nav{
+    border: 2px solid white;
+    float: right;
+    margin-top: 5rem;
+    margin-right: 2rem;
+    width: vh;
+    padding: 3rem 3em;
+    background-color: rgb(8, 8, 8);
+    color: aliceblue;
+    border-radius: 15px;
+    box-shadow: #999999;
+}
+
+.right-nav h4{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: bolder;
+
+}
+
+.right-nav p{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+}
+
+button a:link{
+text-decoration: none;
+}
+
+button a{
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
 }

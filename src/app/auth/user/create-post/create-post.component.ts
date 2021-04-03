@@ -40,8 +40,8 @@ export class CreatePostComponent {
         this.isLoading = true;
         this.postsService.getPost(this.postId).subscribe(postdata =>{
           this.isLoading = false;
-          this.post = {id: postdata._id, title: postdata.title, content: postdata.content , imagePath: postdata.imagePath};
-          this.PostForm.setValue({ title: this.post.title, content: this.post.content, image: this.post.imagePath });
+          this.post = {id: postdata._id, title: postdata.title, content: postdata.content , imagePath: postdata.imagePath, creator: postdata.creator};
+          this.PostForm.setValue({ title: this.post.title, content: this.post.content, image: this.post.imagePath || null});
         });
       }
       else{
@@ -69,6 +69,7 @@ export class CreatePostComponent {
         showConfirmButton: false,
         timer: 2000
       })
+      location.reload();
     }
     
     else{

@@ -6,10 +6,20 @@
     flex-direction: column;
   }
 
+  .post-field{
+    margin: 2rem;
+    margin-left: -1rem;
+    padding: 0.5rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+  }
+
 
 .info-text{
+  color: aliceblue;
   margin-top: 2rem;
   text-align: center;
+  margin-left: 10rem;
   font-family: 'Varela Round', sans-serif;
 }
 

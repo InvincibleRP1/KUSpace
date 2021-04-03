@@ -8,11 +8,12 @@
                 <span class="header-tagline">KUSpace</span>
             <span class="spacer"></span>
             <a mat-button routerLink="/">Home</a>
-            <a *ngIf="!userIsAuthenticated"mat-button routerLink="/signup">Sign Up</a>
-            <a *ngIf="!userIsAuthenticated"mat-button routerLink="/login">Log In</a>
-            <a *ngIf="userIsAuthenticated" mat-button routerLink="/user">Timeline</a>
+            <a *ngIf="!authService.getIsAuth()"mat-button routerLink="/signup">Sign Up</a>
+            <a *ngIf="!authService.getIsAuth()" mat-button routerLink="/login">Log In</a>
+            <a *ngIf="authService.getIsAuth()" mat-button routerLink="/user/messages">Messages</a>
+            <a *ngIf="authService.getIsAuth()" mat-button routerLink="/user">Timeline</a>
             <!-- <a mat-button routerLink="/admin">Admin Section</a> -->
-            <button *ngIf="userIsAuthenticated" mat-button (click)= onLogOut()>Log Out</button>
+            <button *ngIf="authService.getIsAuth()" mat-button (click)= onLogOut()>Log Out</button>
         </mat-toolbar-row>
     </mat-toolbar>
 

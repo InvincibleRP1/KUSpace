@@ -23,7 +23,8 @@ export class PostsService {
               title: post.title,
               content: post.content,
               id: post._id,
-              imagePath: post.imagePath
+              imagePath: post.imagePath,
+              creator: post.creator
             }
           })
         }))
@@ -39,7 +40,7 @@ export class PostsService {
   getPost(id: string) {
     // return {...this.posts.find( p => p.id === id)} //p implies each post, and p.id implies that post's id
 
-    return this.http.get<{ _id: string; title: string; content: string, imagePath: string }>("http://localhost:3300/api/posts/" + id);
+    return this.http.get<{ _id: string; title: string; content: string, imagePath: string, creator: string;}>("http://localhost:3300/api/posts/" + id);
   }
 
   addPosts(title: string, content: string, image: File) {
@@ -50,7 +51,7 @@ export class PostsService {
       postData.append('image', image, title);
     }
     this.http.post<{ message: string, post: PostModel }>('http://localhost:3300/api/posts', postData).subscribe((responseData) => {
-      const post: PostModel = { id: responseData.post.id, title: title, content: content, imagePath: responseData.post.imagePath }
+      const post: PostModel = { id: responseData.post.id, title: title, content: content, imagePath: responseData.post.imagePath, creator: responseData.post.creator}
       this.posts.push(post);
       this.postsUpdated.next([...this.posts]);
     })
@@ -66,7 +67,9 @@ export class PostsService {
       postData.append("title", title);
       postData.append("content", content);
       if(image != undefined){
-        postData.append("image", image, title);
+        // if(typeof image == 'string' && image != ''){
+          postData.append("image", image, title);
+        // }
       }
       
     } else {
@@ -74,7 +77,8 @@ export class PostsService {
         id: id,
         title: title,
         content: content,
-        imagePath: image
+        imagePath: image,
+        creator: null
       };
     }
     this.http
@@ -86,7 +90,8 @@ export class PostsService {
           id: id,
           title: title,
           content: content,
-          imagePath: ""
+          imagePath: "",
+          creator: null
         };
         updatedPosts[oldPostIndex] = post;
         this.posts = updatedPosts;

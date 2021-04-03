@@ -17,6 +17,7 @@ export class PostsComponent implements OnInit, OnDestroy {
   Posts = [];
   private authSubs: Subscription;
   public isAuthenticated = false;
+  userId: string;
   private postsSub: Subscription;
   // private editDialogRef: MatDialogRef<CreatePostComponent>;
 
@@ -31,7 +32,7 @@ export class PostsComponent implements OnInit, OnDestroy {
       denyButtonText: `Cancel`,
     }).then((result) => {
       
-      if (result.isConfirmed) {
+      if (result.isConfirmed && this.userId) {
         this.postsService.deletePosts(postId);
         Swal.fire('Deleted!', 'Your post has been deleted.', 'success')
       } else if (result.isDenied) {
@@ -55,14 +56,18 @@ export class PostsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.isLoading = true;
     this.postsService.getPosts();
+    this.userId = this.authService.getUserId();
     this.postsSub = this.postsService.getUpdatedPostsListener().subscribe(
       (Posts) => {
         this.isLoading = false;
         this.Posts = Posts;
+        
+        
       })
       this.isAuthenticated = this.authService.getIsAuth();
       this.authSubs = this.authService.getAuthStatusListener().subscribe(UserAuthenticatedStatus => {
         this.isAuthenticated = UserAuthenticatedStatus;
+        this.userId = this.authService.getUserId();
       })
       
   }

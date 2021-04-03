@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 export class AdminLoginComponent implements OnInit {
   AuthForm = new FormGroup({
 
-    email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(10),
+    email: new FormControl('a', [Validators.required, Validators.email, Validators.minLength(10),
     Validators.maxLength(25)]),
 
     password: new FormControl('', [Validators.required, Validators.minLength(4), 

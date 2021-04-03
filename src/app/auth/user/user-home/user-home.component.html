@@ -4,19 +4,32 @@
         <!-- start sidebar left -->
         <div class="sidebarleft">
             <img src="https://image.flaticon.com/icons/png/512/17/17004.png" width="150px" />
-            <p id="sidename"> User Name</p>
+            <p id="sidename"> Rahul Pandey </p>
             <p id="ssn"> University Of Kalyani</p>
             <p id="dept"> Computer Science & Engineering Department</p>
             <p id="course">MCA [2018-2021]</p>
             <hr>
+            <button mat-button><mat-icon>launch</mat-icon><a href="http://kucse.in/">KUCSE Website</a></button>
+            <button mat-button><mat-icon>launch</mat-icon><a href="https://www.klyuniv.ac.in/">University Website</a></button>
+            <hr>
             <a routerLink="/user/profile" id="viewall">Profile</a>
             <!-- <p id="nosociety">31</p> -->
-            <a id="society">Society</a>
+            <a routerLink="/user/society" id="society">Society</a>
+            
             <p><button mat-button id="logout" (click)="onLogOut()">Log Out</button></p>
         </div>
         <!-- End of sidebar left -->
     </div>
-    <app-create-post></app-create-post>
+    <div class="right-nav">
+        <h4>Registered users of KUSpace:</h4>
+        <hr><br>
+        <div *ngFor="let user of users">
+            
+            <p>{{ user.FullName }}</p>
+            <!-- <span><button mat-raised-button><mat-icon>add</mat-icon></button></span> -->
+        </div>
+    </div>
 
+    <app-create-post></app-create-post>
     <app-posts></app-posts>
 </div>

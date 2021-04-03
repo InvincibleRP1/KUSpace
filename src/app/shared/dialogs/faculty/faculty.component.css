@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    font-family: "Exo 2", sans-serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  #faculties_sir {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background: rgb(1, 61, 85);
+  }
+  #faculties_sir button {
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    background: #00b894;
+    color: #fff;
+    cursor: pointer;
+    height: 4rem;
+    width: 18rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+  #faculties_sir button:hover {
+    background: #333;
+  }
+  
+  #faculties_sir .heading {
+    font-size: 4rem;
+    padding-top: 5rem;
+    margin: 2rem 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+  
+  #faculties_sir .heading::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 0.3rem;
+    width: 60%;
+    border-radius: 5rem;
+    background: #333;
+  }
+  
+  #faculties_sir .box-container {
+    width: 90%;
+  }
+  
+  #faculties_sir .box-container .box {
+    background: #fff;
+    max-width: 52rem;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0 0 0.3rem #333;
+    box-shadow: 0 0 0.3rem #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+    margin: 2rem;
+    clear: both;
+  }
+  
+  #faculties_sir .box-container .box img {
+    height: 10rem;
+    width: 8rem;
+    margin-right: 4rem;
+  }
+  
+  #faculties_sir .box-container .box .info {
+    padding-left: 2.5rem;
+    border-left: 0.4rem solid #00b894;
+  }
+  
+  #faculties_sir .box-container .box .info h2 {
+    font-size: 2rem;
+    color: #00b894;
+  }
+  
+  #faculties_sir .box-container .box .info p {
+    margin-top: 3px;
+    /* font-size: 1.5rem; */
+    color: #333;
+  }
+  #faculties_sir .box-container .box .info .email {
+    padding-bottom: 2rem;
+    font-size: 1.2rem;
+
+    text-transform: lowercase;
+    color: #00b894;
+  }
+  
+  #faculties_sir .box-container .box:nth-child(2n) {
+    float: right;
+  }
+  
